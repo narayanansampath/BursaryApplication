@@ -1,0 +1,52 @@
+﻿@model SampathNarayananAssignment1.Models.FormResponse
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BursaryForm</title>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"<h4>Bursary</h4></div>
+        <div class="panel-body">
+            <form class="'p-a-1" asp-action="BursaryForm" method="post">
+                <div asp-validation-summary="All" :></div>
+                <div class="form-group">
+                    <label asp-for="Name"> Student Name: </label>
+                    <input class="form-control" asp-for="Name" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"> Student Email: </label>
+                    <input class="form-control" asp-for="Email" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Phone"> Student Phone Number: </label>
+                    <input class="form-control" asp-for="Phone" />
+                </div>
+                <div class="form-group">
+                    <label>Are you an international student?</label>
+                    <select class="form-control" asp-for="IsInternationalStudent">
+                        <option value="">Choose an option</option>
+                        <option value="true">Yes, I am an international student</option>
+                        <option value="false">No, I am a local student</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">
+                        Submit Bursary Applicaiton
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

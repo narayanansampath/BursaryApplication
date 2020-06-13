@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+ }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        img {
+            border-radius: 8px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+
+<body>
+ 
+    <div class="text-center">
+        <h3>
+            @ViewBag.Greeting dear Student <br />
+            <img src="bursarypng.png" alt="image"> <br />
+            Our college has announced an exciting bursary for students! <br />
+            <a class="btn btn-primary" asp-action="BursaryForm">Apply For Bursary Now</a>
+        </h3>
+    </div>
+</body>
+</html>
+

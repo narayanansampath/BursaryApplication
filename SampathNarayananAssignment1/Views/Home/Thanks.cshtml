@@ -1,0 +1,29 @@
+﻿@model SampathNarayananAssignment1.Models.FormResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body class="text-center">
+   <p>
+       <h1> Thank you for applying, @Model.Name!</h1>
+       @if (Model.IsInternationalStudent == true)
+       {
+           @:Sorry, currently international students are not eligible for this bursary. Please check back later.
+       }
+       else
+       {
+           @:Congratulations! you are eligible for the bursary, you will soon be contacted via your email <strong>(@Model.Email)</strong> with further instructions.
+       }
+   </p>
+   Click <a class="nav-link" asp-action="ListResponses">here</a>
+    to see eligible students.
+</body>
+</html>
