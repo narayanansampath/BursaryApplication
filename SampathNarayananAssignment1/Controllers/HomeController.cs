@@ -14,7 +14,7 @@ namespace BursaryApplication.Controllers
         public ViewResult Index()
         {
             int hour = DateTime.Now.Hour;
-            ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Evening";
+            ViewBag.Greeting = hour;
             return View("MyView");
         }
         [HttpGet]

@@ -14,13 +14,21 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
 </head>
 
 <body>
  
     <div class="text-center">
+        @if (ViewBag.Greeting < 12)
+        {
+            <h3>Good Morning dear Student<br /></h3>
+        }
+        else
+        {
+            <h3>Good Evening dear Student<br /></h3>
+        }
         <h3>
-            @ViewBag.Greeting dear Student <br />
             <img src="bursarypng.png" alt="image"> <br />
             Our college has announced an exciting bursary for students! <br />
             <a class="btn btn-primary" asp-action="BursaryForm">Apply For Bursary Now</a>
@@ -29,3 +37,4 @@
 </body>
 </html>
 
+ 

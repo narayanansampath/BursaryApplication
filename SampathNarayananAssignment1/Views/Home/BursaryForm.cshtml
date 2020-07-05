@@ -1,4 +1,4 @@
-﻿@model SampathNarayananAssignment1.Models.FormResponse
+﻿@model FormResponse
 @{
     Layout = null;
 }
@@ -8,12 +8,13 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>BursaryForm</title>
-    <link rel="stylesheet" href="~/css/StyleSheet.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+
 </head>
-<body>
+<body style="align-content: center">
     <div class="panel panel-success">
-        <div class="panel-heading text-center"<h4>Bursary</h4></div>
+        <div class="panel-heading text-center"></div><h4>Bursary</h4></div>
         <div class="panel-body">
             <form class="'p-a-1" asp-action="BursaryForm" method="post">
                 <div asp-validation-summary="All" :></div>
@@ -48,5 +49,3 @@
     </div>
 </body>
 </html>
-
-

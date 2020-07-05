@@ -3,9 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SampathNarayananAssignment1</title>
+    <title>@ViewBag.Title</title>
+    <style>
+        #mainDiv {
+            padding: 20px;
+            border: solid medium black;
+            font-size: 20pt
+        }
+    </style>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
 </head>
 <body>
     <header>
@@ -20,7 +28,7 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
+                        </li>s
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>

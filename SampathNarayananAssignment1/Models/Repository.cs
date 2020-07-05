@@ -9,17 +9,8 @@ namespace SampathNarayananAssignment1.Models
     {
         private static List<FormResponse> responses = new List<FormResponse>();
 
-        public static IEnumerable<FormResponse> Responses
-        {
-            get
-            {
-                return responses;
-            }
-        }
+        public static IEnumerable<FormResponse> Responses => responses;
 
-        public static void AddResponse(FormResponse response)
-        {
-            responses.Add(response);
-        }
+        public static void AddResponse(FormResponse response) => responses.Add(response);
     }
 }

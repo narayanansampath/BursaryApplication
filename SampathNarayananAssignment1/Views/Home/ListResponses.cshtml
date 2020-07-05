@@ -21,12 +21,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (SampathNarayananAssignment1.Models.FormResponse r in Model)
+                @foreach (FormResponse response in Model)
                 {
                     <tr>
-                        <td>@r.Name</td>
-                        <td>@r.Email</td>
-                        <td>@r.Phone</td>
+                        <td>@response.Name</td>
+                        <td>@response.Email</td>
+                        <td>@response.Phone</td>
                     </tr>
                 }
             </tbody>
