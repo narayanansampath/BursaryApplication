@@ -19,6 +19,7 @@
 }
 
 body {
-    background-image: url('background.jpg');
+    margin-bottom: 60px;
+    background-color: rgb(51, 53, 58) !important;
     background-size: cover;
 }
