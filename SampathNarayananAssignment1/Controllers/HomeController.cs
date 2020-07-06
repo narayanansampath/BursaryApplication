@@ -40,5 +40,10 @@ namespace BursaryApplication.Controllers
         {
             return View(Repository.Responses.Where(r => r.IsInternationalStudent == false));
         }
+
+        public ViewResult Privacy()
+        {
+            return View();
+        }
     }
 }
