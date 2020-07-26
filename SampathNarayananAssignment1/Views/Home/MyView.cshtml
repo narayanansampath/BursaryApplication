@@ -1,14 +1,19 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <style>
+        img {
+            border-radius: 8px;
+        }
+    </style>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link href="@Url.Content("~/css/StyleSheet.css")" rel="stylesheet" type="text/css" />
-    
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+
 </head>
 
-<body>
+<body style="background-image: url(bg.jpg); background-size: cover; background-repeat: no-repeat">
  
     <div class="text-center">
         @if (ViewBag.Greeting < 12)
@@ -21,7 +26,7 @@
         }
         <h3>
             <img src="bursarypng.png" alt="image"> <br />
-            Our college has announced an exciting bursary for students! <br />
+            Our college has announced an exciting bursary for students! <br /> <br />
             <a class="btn btn-primary" asp-action="BursaryForm">Apply For Bursary Now</a>
         </h3>
     </div>

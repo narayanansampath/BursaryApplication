@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace SampathNarayananAssignment1.Models
 {
-    public static class Repository
+    public interface Repository
     {
         private static List<FormResponse> responses = new List<FormResponse>();
 
-        public static IEnumerable<FormResponse> Responses => responses;
+        public IQueryable<FormResponse> Responses { get; } //=> responses.AsQueryable<FormResponse>();
 
-        public static void AddResponse(FormResponse response) => responses.Add(response);
+        void AddResponse(FormResponse response);    
     }
 }

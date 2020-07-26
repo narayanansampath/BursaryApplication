@@ -5,7 +5,7 @@
     <title>Responses</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
-<body>
+<body style="background-image: url(bg.jpg); background-size: cover; background-repeat: no-repeat">
     <div class="panel-body">
         <h2>Here is the list of students eligible for the bursary</h2>
         <table class="table table-sm table-striped table-bordered">
@@ -17,6 +17,7 @@
                 </tr>
             </thead>
             <tbody>
+                @model IEnumerable<FormResponse>
                 @foreach (FormResponse response in Model)
                 {
                     <tr>
@@ -28,8 +29,8 @@
             </tbody>
         </table>
     </div>
-   
-        
+
+
 </body>
 </html>
 

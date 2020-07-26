@@ -1,9 +1,11 @@
-﻿.field-validatoin-error {
+﻿﻿.field-validatoin-error {
     color: #f00;
 }
+
 .input-validation-valid {
     display: none;
 }
+
 .input-validation-error {
     border: 1px solid #f00;
     background-color: #fee;
@@ -18,7 +20,12 @@
     display: none;
 }
 
+
+.validation-summary-valid {
+    display: none;
+}
+
 body {
-    background-image: url('background.jpg');
+    background-image: url(bg.jpg);
     background-size: cover;
 }

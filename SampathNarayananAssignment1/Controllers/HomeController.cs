@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BursaryApplication.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SampathNarayananAssignment1.Models;
@@ -11,6 +12,12 @@ namespace BursaryApplication.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext context;
+
+        public HomeController(ApplicationDbContext ctx)
+        {
+            context = ctx;
+        }
         public ViewResult Index()
         {
             int hour = DateTime.Now.Hour;
@@ -25,9 +32,10 @@ namespace BursaryApplication.Controllers
         [HttpPost]
         public ViewResult BursaryForm(FormResponse formResponse)
         {
+            EFRepository repository = new EFRepository(context);
             if (ModelState.IsValid)
             {
-                Repository.AddResponse(formResponse);
+                repository.AddResponse(formResponse);
                 return View("Thanks", formResponse);
             }
             else
@@ -38,7 +46,8 @@ namespace BursaryApplication.Controllers
         }
         public ViewResult ListResponses()
         {
-            return View(Repository.Responses.Where(r => r.IsInternationalStudent == false));
+            EFRepository repo = new EFRepository(context);
+            return View(repo.Responses.Where(r => r.IsInternationalStudent == false));
         }
 
         public ViewResult Privacy()
