@@ -9,7 +9,7 @@ namespace SampathNarayananAssignment1.Models
     {
         private static List<FormResponse> responses = new List<FormResponse>();
 
-        public IQueryable<FormResponse> Responses { get; } //=> responses.AsQueryable<FormResponse>();
+        public IQueryable<FormResponse> Responses { get; }
 
         void AddResponse(FormResponse response);    
     }
