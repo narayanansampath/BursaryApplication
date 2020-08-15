@@ -19,13 +19,13 @@ namespace BursaryApplication.Models
 
         public void AddResponse(FormResponse response)
         {
-            if(response.Id == 0)
+            if (response.Id == 0)
             {
                 context.responses.Add(response);
             } else
             {
                 FormResponse dbEntry = context.responses.FirstOrDefault(p => p.Id == response.Id);
-                if(dbEntry != null)
+                if (dbEntry != null)
                 {
                     dbEntry.Name = response.Name;
                     dbEntry.Email = response.Email;
@@ -35,5 +35,19 @@ namespace BursaryApplication.Models
             }
             context.SaveChanges();
         }
+
+        public FormResponse DeleteResponse(int reponseId)
+        {
+            FormResponse dbEntry = context.responses.FirstOrDefault(p => p.Id == reponseId);
+
+            if (dbEntry != null)
+            {
+                context.responses.Remove(dbEntry);
+                context.SaveChanges();
+            }
+
+            return dbEntry;
+        }
+
     }
 }

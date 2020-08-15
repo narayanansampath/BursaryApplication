@@ -1,0 +1,37 @@
+﻿@model FormResponse
+
+@{
+    Layout = "_Layout";
+}
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <div><span asp-validation-for="Name" class="text-danger"></span></div>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <div><span asp-validation-for="Email" class="text-danger"></span></div>
+            <textarea asp-for="Email" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone"></label>
+            <div><span asp-validation-for="Phone" class="text-danger"></span></div>
+            <input asp-for="Phone" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="IsInternationalStudent"></label>
+            <div><span asp-validation-for="IsInternationalStudent" class="text-danger"></span></div>
+            <select class="form-control" asp-for="IsInternationalStudent">
+                <option value="">Choose an option</option>
+                <option value="true">International student</option>
+                <option value="false">Local student</option>
+            </select>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit" asp-action="Edit" formmethod="post">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>

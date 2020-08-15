@@ -1,4 +1,10 @@
 ﻿<!DOCTYPE html>
+
+@{
+    Layout = "_Layout";
+}
+
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -14,6 +20,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,13 +31,24 @@
                         <td>@response.Name</td>
                         <td>@response.Email</td>
                         <td>@response.Phone</td>
+                        <td class="text-center">
+                            <form asp-action="Delete" method="post" asp-route-responseId="@response.Id">
+                                <a asp-action="Edit" class="btn btn-sm btn-warning"
+                                   asp-route-responseId="@response.Id">
+                                    Edit
+                                </a>
+                                <input type="hidden" name="ProductID" value="@response.Id" />
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 }
             </tbody>
         </table>
+        <a class="btn btn-primary" asp-action="BursaryForm">Add students</a>
     </div>
-
-
 </body>
 </html>
 

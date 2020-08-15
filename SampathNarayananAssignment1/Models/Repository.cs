@@ -11,6 +11,8 @@ namespace SampathNarayananAssignment1.Models
 
         public IQueryable<FormResponse> Responses { get; }
 
-        void AddResponse(FormResponse response);    
+        void AddResponse(FormResponse response);
+
+        FormResponse DeleteResponse(int id);
     }
 }

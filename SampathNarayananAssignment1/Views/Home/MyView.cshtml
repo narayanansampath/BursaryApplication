@@ -16,19 +16,24 @@
 <body style="background-image: url(bg.jpg); background-size: cover; background-repeat: no-repeat">
  
     <div class="text-center">
+        @{ string userType = this.User.Identity.IsAuthenticated ? "Admin" : "Student";}
         @if (ViewBag.Greeting < 12)
         {
-            <h3>Good Morning dear Student<br /></h3>
+            <h3>Good Morning dear @userType<br /></h3>
         }
         else
         {
-            <h3>Good Evening dear Student<br /></h3>
+            <h3>Good Evening dear @userType<br /></h3>
         }
-        <h3>
-            <img src="bursarypng.png" alt="image"> <br />
-            Our college has announced an exciting bursary for students! <br /> <br />
-            <a class="btn btn-primary" asp-action="BursaryForm">Apply For Bursary Now</a>
-        </h3>
+    <h3>
+        <img src="bursarypng.png" alt="image"> <br />
+        Our college has announced an exciting bursary for students! <br /> <br />
+        <a class="btn btn-primary" asp-action="BursaryForm">Apply For Bursary Now</a>
+        @if (!this.User.Identity.IsAuthenticated)
+        {
+           <a class="btn btn-primary" asp-action="Login" asp-controller="Account">Admin Login</a>
+        }
+    </h3>
     </div>
 </body>
 </html>
