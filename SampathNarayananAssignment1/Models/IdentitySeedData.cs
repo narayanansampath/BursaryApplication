@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace BursaryApplication.Models
         
         public static async void EnsurePopulated(IApplicationBuilder app)
         {
+            AppIdentityDbContext context = app.ApplicationServices.GetRequiredService<AppIdentityDbContext>();
+            context.Database.Migrate();
             UserManager<IdentityUser> userManager = app.ApplicationServices
                 .GetRequiredService<UserManager<IdentityUser>>();
             IdentityUser user = await userManager.FindByIdAsync(adminUser);
